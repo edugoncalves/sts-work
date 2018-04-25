@@ -1,0 +1,14 @@
+zuul:
+  routes:  
+    produto-api:
+      path: /produto-api/**
+      sensitiveHeaders:
+      serviceId: produto-api
+eureka:
+      instance:
+        prefer-ip-address: true
+      client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+          defaultZone: http://localhost:8761/eureka/
