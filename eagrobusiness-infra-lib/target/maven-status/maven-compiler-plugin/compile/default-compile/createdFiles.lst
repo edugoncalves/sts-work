@@ -1,0 +1,7 @@
+br\com\eagrobusiness\infra\lib\model\usuario\Autorizacao$AutorizacaoBuilder.class
+br\com\eagrobusiness\infra\lib\model\usuario\Usuario$UsuarioBuilder.class
+br\com\eagrobusiness\infra\lib\service\UsuarioService.class
+br\com\eagrobusiness\infra\lib\repository\UsuarioRepository.class
+br\com\eagrobusiness\infra\lib\repository\AutorizacaoRepsoitory.class
+br\com\eagrobusiness\infra\lib\model\usuario\Autorizacao.class
+br\com\eagrobusiness\infra\lib\model\usuario\Usuario.class
