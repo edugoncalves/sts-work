@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,7 +23,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.
                 authorizeRequests()
-                    .antMatchers("/webjars/**","/static/**").permitAll()
+                    .antMatchers("/**").permitAll()
+                   // .antMatchers("/","/webjars/**","/resources/**","/static/**","/templates/**").permitAll()
                     .antMatchers("/dados-acesso").hasAnyAuthority("ADMIN","CLIENTE_ESPCIAL")
                     .antMatchers("/lista-usuarios").hasAuthority("ADMIN")
                     //.antMatchers("/home").hasAuthority("ADMIN")
@@ -37,6 +39,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                     .and()
                 .rememberMe();
+    }
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+    	web.ignoring().antMatchers("/resources/**");
+    	super.configure(web);
+
     }
 
     @Autowired

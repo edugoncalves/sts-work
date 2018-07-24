@@ -15,18 +15,16 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.eagrobusiness.web.dao.repository.UsuarioRepository;
 //import br.com.eagrobusiness.infra.lib.model.usuario.Usuario;
 import br.com.eagrobusiness.web.model.UsuarioModel;
+import br.com.eagrobusiness.web.service.UsuarioService;
 
 @Controller
 public class UsuarioController {
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-    private static final String USUARIO = "usuario";
 
+    private static final String USUARIO = "usuario";
+ 
   @Autowired
-  private UsuarioRepository repo;
+  private UsuarioService servico;
     
 	@GetMapping("/cadastrar")
     public ModelAndView cadastrar() {
@@ -42,25 +40,11 @@ public class UsuarioController {
     }
     @PostMapping("/salvar")
     public String salvar(UsuarioModel usuario) {
-    	 String nome =usuario.getName();
-    	 System.out.println(nome);
-//    	 Usuario usr=Usuario.builder().username(usuario.getUsername())
-//    			 .passowrd(passwordEncoder().encode("123456")).build();
-    	 
-//    	 servico.salvar(usr);
+     	 
+    	 servico.salvar(usuario);
         return "redirect:/lista-usuarios";
     }
-    private List<UsuarioModel> listar(){
-    	List<UsuarioModel> usuarios = new ArrayList<UsuarioModel>();
-    	UsuarioModel usr1 = new UsuarioModel();
-    	usr1.setName("Usuario 1");
-    	usr1.setUsername("usr1");
-    	usuarios.add(usr1);
-    	UsuarioModel usr2 = new UsuarioModel();
-    	usr2.setName("Usuario 2");
-    	usr2.setUsername("usr2");
-    	usuarios.add(usr2);
-    	
-    	return usuarios;
+    private List<UsuarioModel> listar(){     	
+    	return servico.listarTodos();
     }
 }

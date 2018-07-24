@@ -8,5 +8,7 @@ public class UsuarioModel {
 	private String username;
 	private String passwrod;
 	private String name;
+	private String email;
 	private boolean ativo;
+	
 }

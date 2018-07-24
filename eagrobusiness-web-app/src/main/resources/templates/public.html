@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, user-scalable=no"/>
+
+		<title>e-agrobusiness ::: Bem vindo!</title>
+
+		<link href="/css/style.css" rel="stylesheet"/>
+	</head>
+    <body style="background-color:#004d00">
+		<div layout:fragment="content" width="100%">
+  <div class="slider">
+    <div id="about-slider">
+      <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators visible-xs">
+          <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-slider" data-slide-to="1"></li>
+          <li data-target="#carousel-slider" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/1.jpg" class="img-responsive" alt="">
+            <div class="carousel-caption">
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+                <h2><span>e-Agrobusiness provendo produtos de qualidade</span></h2>
+              </div>
+              <div class="col-md-10 col-md-offset-1">
+                <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                  <p>Integre seus sistemas com os nossos, entre em contato conosco</p>
+                </div>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">Produtos</button>
+                  </div>
+                  <div class="form-group">
+                    <button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">Serviços</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="img/2.jpg" class="img-responsive" alt="">
+            <div class="carousel-caption">
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
+                <h2>Descarte de embalagens inteligente</h2>
+              </div>
+              <div class="col-md-10 col-md-offset-1">
+                <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+                  <p>Conforme a legislação vigente, embalens de agrotóxicos precisam ser descartadas adequadamente.</p>
+                </div>
+              </div>
+              <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">
+               <form class="form-inline">
+                  <div class="form-group">
+                    <button type="livedemo" name="purchase" class="btn btn-primary btn-lg">Descarte</button>
+                  </div>
+                  <div class="form-group">
+                    <a type="getnow" href="http://www.mma.gov.br/port/conama/processos/E040145E/Min_Revisao_Res_334_EMENDAS_pos_4ext_CTQAGR_V1.pdf" target="blank" name="subscribe" class="btn btn-primary btn-lg" > legislação</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+
+        <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+      </div>
+      <!--/#carousel-slider-->
+    </div>
+    <!--/#about-slider-->
+  </div>
+  <!--/#slider-->
+
+		</div>
+    </body>
+</html>
