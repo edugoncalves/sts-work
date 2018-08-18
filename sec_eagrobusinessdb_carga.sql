@@ -2,7 +2,7 @@ use sec_eagrobusiness;
 
 insert into perfil(nome,ativo) values('ADMIN',true);
 insert into perfil(nome,ativo) values('CLIENTE',true);
-insert into perfil(nome,ativo) values('CLIENTE_ESPCIAL',true);
+insert into perfil(nome,ativo) values('CLIENTE_ESPECIAL',true);
 
 insert into recurso(nome)values('produto-api');
 
