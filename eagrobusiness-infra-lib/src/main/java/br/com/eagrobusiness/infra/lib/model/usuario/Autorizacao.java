@@ -12,6 +12,10 @@ import lombok.Data;
 @Document(collection="autorizacoes")
 public class Autorizacao implements GrantedAuthority{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2465678310455000030L;
 	@Id
 	private String id;
 	private String authority;

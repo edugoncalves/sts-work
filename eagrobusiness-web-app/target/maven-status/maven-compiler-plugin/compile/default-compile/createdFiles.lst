@@ -1,10 +1,10 @@
 br\com\eagrobusiness\web\service\UsuarioService.class
-br\com\eagrobusiness\web\Teste.class
 br\com\eagrobusiness\web\security\WebSecurityConfig.class
 br\com\eagrobusiness\web\model\UsuarioSecurityModel.class
 br\com\eagrobusiness\web\dao\repository\PefilRepository.class
 br\com\eagrobusiness\web\controller\MainController.class
 br\com\eagrobusiness\web\dao\repository\UsuarioRepository.class
+br\com\eagrobusiness\web\config\MvcConfig.class
 br\com\eagrobusiness\web\controller\UsuarioController.class
 br\com\eagrobusiness\web\dao\repository\RecursoRepository.class
 br\com\eagrobusiness\web\model\UsuarioModel.class

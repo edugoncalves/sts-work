@@ -1,4 +1,3 @@
-D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\Teste.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\dao\repository\PefilRepository.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\security\WebSecurityConfig.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\controller\UsuarioController.java
@@ -6,6 +5,7 @@ D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eag
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\dao\entity\Usuario.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\service\UsuarioService.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\WebApplication.java
+D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\config\MvcConfig.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\model\UsuarioSecurityModel.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\dao\entity\Perfil.java
 D:\projetos\workspaces\sts-spring\eagrobusiness-web-app\src\main\java\br\com\eagrobusiness\web\controller\MainController.java

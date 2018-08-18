@@ -7,52 +7,53 @@
 
 <title>Dados de acesso</title>
 
-<link href="/css/style.css" rel="stylesheet" />
-<style type="text/css">
-.col-12 {
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-</style>
 </head>
 
 <body>
-	<div layout:fragment="content">
-
-		<div class="page-header">
-			<h1>Cadastro de Usuário</h1>
-		</div>
-		<div class="row">
-
-			<form class="form-inline" method="POST" th:object="${usuario}"
-				th:action="@{/salvar}" style="margin-left: 50px">
-
-				<div class="row">
-					<div class="col-12 md-8">
-						<input type="text" class="form-inline" placeholder="Nome completo"
-							th:field="*{name}">
-					</div>
-					<div class="col-12 md-8">
-						<input type="text" class="form-inline" placeholder="Login"
-							th:field="*{username}">
-					</div>
-										<div class="col-12 md-8">
-						<input type="email" class="form-inline" placeholder="Senha"
-							th:field="*{email}">
-					</div>
-					<div class="col-12 md-8">
-						<input type="password" class="form-inline" placeholder="Senha"
-							th:field="*{passwrod}">
-					</div>
-					<div class="col-12 md-8">
-						<input type="submit" class="form-inline" placeholder="Salvar"
-							value="Salvar">
+	<div layout:fragment="content" style=" margin:120px 0px 65px 35% ">
+		<form method="POST" th:object="${usuario}" th:action="@{/salvar}">
+			<div class="container-fluid">
+				<div class="page-header">
+					<h2>Cadastro de Usuário</h2>
+				</div>
+				<div class="form-group row">
+					<label for="nome_completo" class="col-sm-2 col-form-label">Nome
+						Completo</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="nome_completo"
+							placeholder="Nome Completo" th:field="*{name}" />
 					</div>
 				</div>
 
-			</form>
-		</div>
-
+				<div class="form-group row">
+					<label for="login" class="col-sm-2 col-form-label">Login</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="login"
+							placeholder="Login" th:field="*{username}" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="email" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="email"
+							placeholder="Email" th:field="*{email}" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="senha" class="col-sm-2 col-form-label">Senha</label>
+					<div class="col-sm-5">
+						<input type="password" class="form-control" id="senha"
+							placeholder="Senha" th:field="*{passwrod}" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-2">
+						<input type="submit" class="form-control" placeholder="Salvar"
+							value="Salvar">
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
 </body>
 </html>
