@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: eagrobusiness-web-app
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: es_go
+Implementation-Vendor-Id: br.com.eagrobusiness.web
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/eagrobusiness-web-app
+Created-By: Maven Integration for Eclipse
+

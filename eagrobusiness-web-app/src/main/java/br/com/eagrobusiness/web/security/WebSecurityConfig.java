@@ -18,7 +18,8 @@ import br.com.eagrobusiness.web.service.UsuarioService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	private final String[] RESOURCES_PATH= {"/","/img/**","/js/**","/css/**","/fonts/**","/skin/**","/contactform/**","/webjars/**","/resources/**","/static/**","/templates/**"};
+	private final String[] RESOURCES_PATH= {"/","/img/**","/js/**","/css/**","/fonts/**","/skin/**","/contactform/**",
+			"/webjars/**","/resources/**","/static/**","/templates/**","/public"};
 
 	@Autowired
 	UsuarioService usuarioService;
@@ -27,14 +28,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 authorizeRequests()
                 	.antMatchers(RESOURCES_PATH).permitAll().anyRequest().permitAll()
-                    .antMatchers("/dados-acesso").hasAnyAuthority("ADMIN","CLIENTE_ESPCIAL")
+                    .antMatchers("/dados-acesso").hasAnyAuthority("ADMIN","CLIENTE_ESPECIAL")
                     .antMatchers("/lista-usuarios").hasAuthority("ADMIN")
+                    .antMatchers("/home").hasAnyAuthority("ADMIN","CLIENTE_ESPECIAL","CLIENTE")
                     .anyRequest()
                     .authenticated()
                     .and()
                 .formLogin()
                     .loginPage("/login")
                     .permitAll()
+                    .defaultSuccessUrl("/home")
+                    .failureUrl("/login?error=true")
                     .and()
                 .logout()
                     .permitAll()
