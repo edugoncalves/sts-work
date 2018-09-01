@@ -50,12 +50,13 @@
 						<li><a href="#services">Serviços</a></li>
 						<li><a href="#team">Produtos</a></li>
 						<li><a href="#line-pricing">Loja</a></li>
-						<li><a href="#section-contact">Contato</a></li>
-						<li><a href="/login">Logar</a></li>
-						<li><a href="#section-contact">Usuarios</a></li>										
+						<li><a href="#section-contact" sec:authorize="isAnonymous()">Contato</a></li>
+						<li sec:authorize="isAnonymous()"><a href="/login">Logar</a></li>
+						<li sec:authorize="isAuthenticated()"><a href="/login">Logout</a></li>
+						<li><a href="#section-contact" sec:authorize="isAuthenticated()">Usuarios</a></li>										
 						
 																
-						<li><a href="#section-about">Sobre</a></li>
+						<li><a href="#section-about" >Sobre</a></li>
 
 					</ul>
 				</div>
