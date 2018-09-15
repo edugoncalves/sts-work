@@ -1,0 +1,16 @@
+FROM openjdk:8-jdk-alpine
+
+LABEL maintainer="es_goncalves@msn.com"
+
+VOLUME /tmp
+
+ENV HOST_EUREKA=discovery_server
+ENV HOST_MONGO=db_mongo
+ENV HOST_MYSQL=db_mysql
+
+ARG JAR_FILE=target/produto-api-0.0.1-SNAPSHOT.jar
+
+ADD ${JAR_FILE} api-produto.jar
+
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/api-produto.jar"]
+EXPOSE 7001

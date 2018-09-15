@@ -1,0 +1,13 @@
+REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
+
+esgoncalves/api-zuul-proxy     latest              50c5b8399ab8        7 minutes ago       149MB
+
+esgoncalves/api-eureka-client   latest              74748da31a04        31 minutes ago      147MB
+
+esgoncalves/api-eureka-server   latest              104791c570e4        32 minutes ago      147MB
+
+mongo                           latest              e3985c6fb3c8        4 days ago          381MB
+
+openjdk                         8-jdk-alpine        20faac299d19        7 days ago          103MB
+
+mysql                           latest              6a834f03bd02        7 days ago          484MB

@@ -1,0 +1,71 @@
+version: "3.4"
+services:
+  zuul_gateway:
+    image: esgoncalves/api-zuul-proxy
+    ports:
+      - "8000"
+    links:
+      - discovery_server
+      - eureka_client
+      - api_produto
+      - db_mongo    
+    networks:
+      - eagrobusiness-network
+  eureka_client:
+    image: esgoncalves/api-eureka-client
+    ports:
+      - "8001"
+    links:
+      - discovery_server
+    networks:
+      - eagrobusiness-network
+  discovery_server:
+    image: esgoncalves/api-eureka-server
+    container_name: "discovery_server"
+    ports:
+      - "8761:8761"
+    networks:
+      - eagrobusiness-network
+  db_mongo:
+    image: mongo
+    container_name: "db_mongo"
+    ports:
+    - "27017:27017"
+    command: --smallfiles
+    networks: 
+        - eagrobusiness-network
+  db_mysql:
+    image: esgoncalves/mysql
+    container_name: "mysql"
+    ports:
+    - "3306:3306"
+    networks: 
+      - eagrobusiness-network
+  api_produto:
+        image: esgoncalves/api-produtos
+    container_name: "api_produto"
+    ports:
+      - "7000"
+    links:
+      - discovery_server
+      - eureka_client
+      - api_produto
+      - db_mongo
+      - db_mysql  
+    networks: 
+      - eagrobusiness-network
+    webapp:
+        image: esgoncalves/webapp
+    container_name: "webapp"
+    ports:
+      - "80:80"
+    links:
+      - api_produto
+      - db_mongo
+      - db_mysql  
+    networks: 
+      - eagrobusiness-network
+      
+networks: 
+    eagrobusiness-network:
+        driver: bridge
