@@ -4,6 +4,8 @@ LABEL maintainer="es_goncalves@msn.com"
 
 VOLUME /tmp
 
+ENV HOST_EUREKA=discovery_server
+
 ARG JAR_FILE=target/eureka-client-0.0.1-SNAPSHOT.jar
 
 ADD ${JAR_FILE} eureka-client.jar
