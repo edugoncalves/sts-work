@@ -2,3 +2,9 @@
 /.recommenders/
 /RemoteSystemsTempFiles/
 eagrobusiness-web-app.7z
+/eagrobusiness-api-produto/target
+/eagrobusiness-infra-eureka/target
+/eagrobusiness-infra-eureka-client/target
+/eagrobusiness-infra-zuul/target
+/eagrobusiness-web-app/target
+
