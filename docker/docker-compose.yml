@@ -35,6 +35,9 @@ services:
     networks: 
         - eagrobusiness-network
   db_mysql:
+    build:
+      dockerfile: mysql.dockerfile
+      context: .
     image: esgoncalves/mysql
     container_name: "mysql"
     ports:
@@ -42,29 +45,28 @@ services:
     networks: 
       - eagrobusiness-network
   api_produto:
-        image: esgoncalves/api-produtos
-    container_name: "api_produto"
-    ports:
-      - "7000"
-    links:
-      - discovery_server
-      - eureka_client
-      - api_produto
-      - db_mongo
-      - db_mysql  
-    networks: 
-      - eagrobusiness-network
-    webapp:
-        image: esgoncalves/webapp
-    container_name: "webapp"
-    ports:
-      - "80:80"
-    links:
-      - api_produto
-      - db_mongo
-      - db_mysql  
-    networks: 
-      - eagrobusiness-network
+        image: esgoncalves/api-produto
+        container_name: "api_produto"
+        ports:
+          - "7000"
+        links:
+          - discovery_server
+          - eureka_client
+          - db_mongo
+          - db_mysql  
+        networks: 
+          - eagrobusiness-network
+  webapp:
+      image: esgoncalves/webapp
+      container_name: "webapp"
+      ports:
+        - "80:80"
+      links:
+        - api_produto
+        - db_mongo
+        - db_mysql  
+      networks: 
+        - eagrobusiness-network
       
 networks: 
     eagrobusiness-network:
