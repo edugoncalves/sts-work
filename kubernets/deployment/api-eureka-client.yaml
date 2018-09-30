@@ -1,0 +1,32 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: eureka-client
+  labels:
+    app: eureka-client
+spec:
+  selector:
+    matchLabels:
+      app: eureka-client
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: eureka-client
+        tier: frontend
+    spec:
+      containers:
+      - image: esgoncalcves/api-eureka-client:latest
+        name: eureka-client
+        ports:
+        - containerPort: 8700
+          name:  eureka-client
+        volumeMounts:
+        - name: api-eureka-client-persistent-storage
+          mountPath: /var/www/api/eureka/client
+      volumes:
+      - name: api-eureka-client-persistent-storage
+        persistentVolumeClaim:
+          claimName: api-eureka-client-pv-claim

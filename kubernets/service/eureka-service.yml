@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: discovery
+  labels:
+    app: eureka
+spec:
+  ports:
+    - port: 8761
+  selector:
+    app: eureka
+    tier: frontend
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: eureka-ingress
+spec:
+  backend:
+    serviceName: api-eureka-server
+    servicePort: 8761
+

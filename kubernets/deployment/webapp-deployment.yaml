@@ -1,0 +1,45 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: eagrobusiness
+  labels:
+    app: eagrobusiness
+spec:
+  selector:
+    matchLabels:
+      app: eagrobusiness
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: eagrobusiness
+        tier: frontend
+    spec:
+      containers:
+      - image: esgoncalcves/webapp-eagrobusiness:latest
+        name: eagrobusiness
+        env:
+        - name: HOST_MYSQL
+          value: mysql-service
+        - name: DB_USER_APP
+          valueFrom:
+            secretKeyRef:
+              name: eagrobusiness-config-secret
+              key: username
+        - name: DB_PSW_APP
+          valueFrom:
+              secretKeyRef:
+                name: eagrobusiness-config-secret
+                key: password
+        ports:
+        - containerPort: 7001
+          name: eagrobusiness
+        volumeMounts:
+        - name: eagrobusiness-webapp-persistent-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: eagrobusiness-webapp-persistent-storage
+        persistentVolumeClaim:
+          claimName: webapp-pv-claim
