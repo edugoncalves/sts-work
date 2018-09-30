@@ -12,3 +12,26 @@ eureka:
         fetch-registry: true
         service-url:
           defaultZone: http://localhost:8761/eureka/
+spring:
+  data:
+    mongodb:
+      host: localhost
+          
+---
+
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb/${MONGO_DATABASE}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+    
+   

@@ -1,18 +1,32 @@
 server:
-  port: 8001
+  port: 8700
 spring:
   application:
     name: eureka-client
-    
-eureka:
-      instance:
-        prefer-ip-address: true
-      client:
-        register-with-eureka: true
-        fetch-registry: true
-        service-url:
-          defaultZone: http://${HOST_EUREKA:localhost}:8761/eureka/
 
-ribbon:
-  eureka:
-    enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+    
+    
+---
+
+spring:
+  profiles: docker
+  application:
+    name: api-eureka-client
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+

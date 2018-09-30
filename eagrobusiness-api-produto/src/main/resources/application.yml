@@ -15,4 +15,19 @@ eureka:
         fetch-registry: true
         service-url:
           defaultZone: http://${HOST_EUREKA:localhost}:8761/eureka/
-  
+          
+---
+
+spring:
+  profiles: docker
+  application:
+    name: produto-api
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"

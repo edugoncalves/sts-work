@@ -3,8 +3,8 @@
 -- DROP DATABASE sec_eagrobusiness;
 CREATE  DATABASE sec_eagrobusiness;
 
-CREATE USER 'usrdbeagro'@'localhost' IDENTIFIED BY 'eagro2business';
-GRANT ALL PRIVILEGES ON sec_eagrobusiness.* TO 'usrdbeagro'@'localhost';
+CREATE USER 'usrdbeagro'@'%' IDENTIFIED BY 'eagro2business';
+GRANT ALL PRIVILEGES ON sec_eagrobusiness.* TO 'usrdbeagro'@'%';
 
 -- acessa o banco de dados recem criado
 use sec_eagrobusiness;
