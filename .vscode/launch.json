@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EagrobusinessInfraEurekaApplication<eureka-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.com.eagrobusiness.infra.EagrobusinessInfraEurekaApplication",
+            "projectName": "eureka-server",
+            "args": ""
+        }
+    ]
+}
