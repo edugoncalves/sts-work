@@ -16,7 +16,9 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mongo:latest
+        image: mongo:3.4-jessie
+        securityContext:
+          runAsUser: 0
         ports:
         - containerPort: 27017
         env:
@@ -35,10 +37,3 @@ spec:
             secretKeyRef:
               name: mongodb
               key: database-password
-        volumeMounts:
-        - name: mongodb-persistent-storage
-          mountPath: /var/www/html
-      volumes:
-      - name: mongodb-persistent-storage
-        persistentVolumeClaim:
-          claimName: mongodb-pv-claim

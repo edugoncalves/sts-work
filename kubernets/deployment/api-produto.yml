@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: employee
+  name: api-produto
   labels:
-    app: employee
+    app: api-produto
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: employee
+      app: api-produto
   template:
     metadata:
       labels:
-        app: employee
+        app: api-produto
     spec:
       containers:
-      - name: employee
-        image: piomin/employee:1.0
+      - name: api-produto
+        image: esgoncalcves/api-produto
         ports:
-        - containerPort: 8080
+        - containerPort: 7000
         env:
         - name: MONGO_DATABASE
           valueFrom:
@@ -35,3 +35,15 @@ spec:
             secretKeyRef:
               name: mongodb
               key: database-password
+        - name: HOST_MYSQL
+          value: mysql-service
+        - name: DB_USER_APP
+          valueFrom:
+            secretKeyRef:
+              name: eagrobusiness-config-secret
+              key: username
+        - name: DB_PSW_APP
+          valueFrom:
+              secretKeyRef:
+                name: eagrobusiness-config-secret
+                key: password

@@ -11,13 +11,4 @@ spec:
     app: eureka
     tier: frontend
   type: LoadBalancer
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: eureka-ingress
-spec:
-  backend:
-    serviceName: api-eureka-server
-    servicePort: 8761
 

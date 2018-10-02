@@ -24,5 +24,10 @@ public class MainController {
     public String login() {
         return "login";
     }
+    @GetMapping("/logout")
+    public String logout() {
+    	
+        return "public";
+    }
 
 }

@@ -11,4 +11,10 @@ cd -
 cd eagrobusiness-infra-eureka-client; 
 mvn clean package -DskipTests=true; 
 cd -
+cd eagrobusiness-infra-zuul; 
+mvn clean package -DskipTests=true; 
+cd -
+cd eagrobusiness-api-produto; 
+mvn clean package -DskipTests=true; 
+cd -
 find . -name *SNAPSHOT.jar -exec du -h {} \;
